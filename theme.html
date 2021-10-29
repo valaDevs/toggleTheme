@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle</title>
+</head>
+<style>
+    :root{
+        --dark-color:#000;
+        --light-color:#fff;
+    }
+    html{
+        transition: all 0.5s ease-in;
+    }
+    html.dark{
+        --dark-color:#fff;
+        --light-color:#000;
+    }
+    html.dark{
+        background-color: #000;
+        color: var(--dark-color);
+    }
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button{
+        width: 200px;
+        height: 80px;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        background-color: rgb(46, 46, 46);
+       color: #fff;
+    }
+    
+</style>
+<body>
+    <button id="toggle">Toggle Theme</button>
+    <script>
+        const btn = document.getElementById('toggle')
+        btn.addEventListener('click' , e => {
+            const html = document.querySelector('html')
+            html.classList.toggle('dark')
+        })
+    </script>
+</body>
+</html>
